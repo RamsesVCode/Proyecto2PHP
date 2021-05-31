@@ -1,5 +1,6 @@
 <?php session_start();?>
 <?php require_once 'includes/helpers.php';?>
+<?php require_once 'includes/conexion.php';?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,6 +22,12 @@
         <nav id="menu">
             <ul>
                 <li><a href="index.php">Inicio</a></li>
+                <?php $categorias=getCategorias($db);?>
+                <?php if(!empty($categorias)): ?>
+                <?php while($categoria = mysqli_fetch_assoc($categorias)): ?>
+                    <li><a href="#"><?=$categoria['NOMBRE'];?></a></li>
+                <?php endwhile;?>
+                <?php endif;?>
                 <li><a href="index.php">Sobre Mi</a></li>
                 <li><a href="index.php">Contacto</a></li>
             </ul>

@@ -17,4 +17,13 @@
             unset($_SESSION['error_login']);
         }
     }
+    function getCategorias($db){
+        $sql = "SELECT * FROM categorias";
+        $categorias = mysqli_query($db,$sql);
+        $resultado = '';
+        if($categorias && mysqli_num_rows($categorias)>=1){
+            $resultado = $categorias;
+        }
+        return $resultado;
+    }
 ?>
