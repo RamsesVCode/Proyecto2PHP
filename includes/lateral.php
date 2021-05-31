@@ -1,12 +1,14 @@
 <aside id="sidebar">
+    <?php if(isset($_SESSION['usuario'])): ?>
         <div id="botones" class="bloque">
             <a href="#" class="boton boton-verde">Crear entradas</a>
             <a href="#" class="boton boton-crimson">Crear categoria</a>
             <a href="#" class="boton boton-naranja">Mis datos</a>
             <a href="#" class="boton boton-rojo">Cerrar sesión</a>
         </div>
-
+    <?php else: ?>
         <div id="login" class="bloque">
+            <?php echo mostrarErrores($_SESSION,'error_login'); ?>
             <h3>Identificate</h3>
             <form action="login.php" method="POST">
                 <label for="email">Email</label>
@@ -47,4 +49,5 @@
             </form>
             <?php borrarErrores();?>
         </div>
+        <?php endif; ?>
     </aside>

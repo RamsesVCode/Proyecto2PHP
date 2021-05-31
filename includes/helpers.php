@@ -13,5 +13,8 @@
         if(isset($_SESSION['conecta'])){
             unset($_SESSION['conecta']);
         }
+        if(isset($_SESSION['error_login'])){
+            unset($_SESSION['error_login']);
+        }
     }
 ?>
