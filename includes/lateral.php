@@ -4,7 +4,7 @@
             <a href="#" class="boton boton-verde">Crear entradas</a>
             <a href="#" class="boton boton-crimson">Crear categoria</a>
             <a href="#" class="boton boton-naranja">Mis datos</a>
-            <a href="#" class="boton boton-rojo">Cerrar sesión</a>
+            <a href="cerrar.php" class="boton boton-rojo">Cerrar sesión</a>
         </div>
     <?php else: ?>
         <div id="login" class="bloque">
