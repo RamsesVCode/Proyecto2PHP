@@ -199,6 +199,7 @@ body{
 }
 .boton:active{
     transform:scale(.8);
+    color:white;
 }
 /*Pie de pagina*/
 #pie{
