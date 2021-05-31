@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php if(!isset($_SESSION)) session_start();?>
 <?php require_once 'includes/helpers.php';?>
 <?php require_once 'includes/conexion.php';?>
 <!DOCTYPE html>

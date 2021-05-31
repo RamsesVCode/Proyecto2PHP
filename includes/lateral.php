@@ -2,7 +2,7 @@
     <?php if(isset($_SESSION['usuario'])): ?>
         <div id="botones" class="bloque">
             <a href="#" class="boton boton-verde">Crear entradas</a>
-            <a href="#" class="boton boton-crimson">Crear categoria</a>
+            <a href="crear-categoria.php" class="boton boton-crimson">Crear categoria</a>
             <a href="#" class="boton boton-naranja">Mis datos</a>
             <a href="cerrar.php" class="boton boton-rojo">Cerrar sesión</a>
         </div>
