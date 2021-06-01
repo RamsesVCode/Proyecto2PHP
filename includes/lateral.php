@@ -1,4 +1,11 @@
 <aside id="sidebar">
+    <div id="busqueda" class="bloque">
+        <h3>Buscar</h3>
+        <form action="buscar.php" method="POST">
+            <input type="text" name="busqueda" autocomplete="off"/>
+            <input type="submit" value="Buscar"/>
+        </form>
+    </div>
     <?php if(isset($_SESSION['usuario'])): ?>
         <div id="botones" class="bloque">
             <a href="crear-entradas.php" class="boton boton-verde">Crear entradas</a>

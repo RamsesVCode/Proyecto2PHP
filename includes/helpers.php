@@ -26,11 +26,14 @@
         }
         return $resultado;
     }
-    function getEntradas($db, $limit=null,$id=null){
+    function getEntradas($db, $limit=null,$id=null,$busqueda=null){
         $sql = "SELECT e.*,c.NOMBRE FROM ENTRADAS e
         JOIN CATEGORIAS c ON e.CATEGORIA_ID=c.ID";
         if($id != null){
             $sql .= " WHERE CATEGORIA_ID = $id";
+        }
+        if($busqueda !=null){
+            $sql .= " WHERE TITULO LIKE '%$busqueda%'";
         }
         $sql .= " ORDER BY e.ID DESC";
         if($limit != null){
