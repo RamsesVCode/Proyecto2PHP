@@ -53,7 +53,7 @@
         return $resultado;
     }
     function getEntrada($db,$id){
-        $sql = "SELECT e.*, c.NOMBRE CATEGORIA, u.NOMBRE FROM entradas e JOIN categorias c ON e.CATEGORIA_ID = c.ID JOIN usuarios u ON e.USUARIO_ID=u.ID WHERE e.ID=$id";
+        $sql = "SELECT e.*, c.NOMBRE CATEGORIA, u.NOMBRE, u.ID USER FROM entradas e JOIN categorias c ON e.CATEGORIA_ID = c.ID JOIN usuarios u ON e.USUARIO_ID=u.ID WHERE e.ID=$id";
         $entrada = mysqli_query($db,$sql);
         $resultado = '';
         if($entrada && mysqli_num_rows($entrada)>0){

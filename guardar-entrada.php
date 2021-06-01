@@ -23,7 +23,11 @@
         //Verificamos
         if(count($errores)==0){
             $usuario_id = $_SESSION['usuario']['ID'];
-            $sql = "INSERT INTO entradas VALUES(null,$usuario_id,$categoria,'$titulo','$descripcion',CURDATE())";
+            if(!isset($_GET['editar'])){
+                $sql = "INSERT INTO entradas VALUES(null,$usuario_id,$categoria,'$titulo','$descripcion',CURDATE())";
+            }else{
+                $sql = "UPDATE entradas SET TITULO = '$titulo', DESCRIPCION = '$descripcion',CATEGORIA_ID=$categoria,FECHA=CURDATE() WHERE ID=".$_GET['editar'];
+            }
             $guardar = mysqli_query($db,$sql);
             if($sql){
                 header('Location:index.php');
