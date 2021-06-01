@@ -32,7 +32,7 @@
         if($id != null){
             $sql .= " WHERE CATEGORIA_ID = $id";
         }
-        $sql .= " ORDER BY e.FECHA DESC";
+        $sql .= " ORDER BY e.ID DESC";
         if($limit != null){
             $sql .= " LIMIT $limit";
         }

@@ -2,7 +2,7 @@
 <?php require_once 'includes/lateral.php'; ?>
 <div id="principal">
         <h1>Ultimas entradas</h1>
-        <?php $entradas = getEntradas($db, 4);?>
+        <?php $entradas = getEntradas($db,4);?>
         <?php if(!empty($entradas)): ?>    
         <?php while($entrada = mysqli_fetch_assoc($entradas)): ?>
         <article class="entrada">
