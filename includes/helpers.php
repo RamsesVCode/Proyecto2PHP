@@ -29,12 +29,13 @@
     function getEntradas($db, $limit=null){
         $sql = "SELECT e.*,c.NOMBRE FROM ENTRADAS e
         JOIN CATEGORIAS c ON e.CATEGORIA_ID=c.ID";
+        $sql .= " ORDER BY e.FECHA DESC";
         if($limit != null){
             $sql .= " LIMIT $limit";
         }
         $entradas = '';
         $query = mysqli_query($db,$sql);
-        if($sql){
+        if($query && mysqli_num_rows($query)>0){
             $entradas = $query;
         }
         return $entradas;
