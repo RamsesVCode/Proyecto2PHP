@@ -6,7 +6,7 @@
         <?php if(!empty($entradas)): ?>    
         <?php while($entrada = mysqli_fetch_assoc($entradas)): ?>
         <article class="entrada">
-            <a href="entrada.php?id=<?= $entrada['ID'];?>">
+            <a href="entrada.php?id=<?=$entrada['ID'];?>">
                 <h2><?=$entrada['TITULO'];?></h2>
             </a>
             <span class="fecha">
