@@ -26,9 +26,12 @@
         }
         return $resultado;
     }
-    function getEntradas($db, $limit=null){
+    function getEntradas($db, $limit=null,$id=null){
         $sql = "SELECT e.*,c.NOMBRE FROM ENTRADAS e
         JOIN CATEGORIAS c ON e.CATEGORIA_ID=c.ID";
+        if($id != null){
+            $sql .= " WHERE CATEGORIA_ID = $id";
+        }
         $sql .= " ORDER BY e.FECHA DESC";
         if($limit != null){
             $sql .= " LIMIT $limit";
@@ -39,5 +42,14 @@
             $entradas = $query;
         }
         return $entradas;
+    }
+    function getCategoria($db,$id){
+        $sql = "SELECT * FROM categorias WHERE ID = $id";
+        $categoria = mysqli_query($db,$sql);
+        $resultado = '';
+        if($categoria && mysqli_num_rows($categoria)>0){
+            $resultado = mysqli_fetch_assoc($categoria);
+        }
+        return $resultado;
     }
 ?>
