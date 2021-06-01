@@ -26,4 +26,17 @@
         }
         return $resultado;
     }
+    function getEntradas($db, $limit=null){
+        $sql = "SELECT e.*,c.NOMBRE FROM ENTRADAS e
+        JOIN CATEGORIAS c ON e.CATEGORIA_ID=c.ID";
+        if($limit != null){
+            $sql .= " LIMIT $limit";
+        }
+        $entradas = '';
+        $query = mysqli_query($db,$sql);
+        if($sql){
+            $entradas = $query;
+        }
+        return $entradas;
+    }
 ?>
